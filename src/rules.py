@@ -4,7 +4,7 @@ import re
 DETECTION_RULES = [
     {
         "id": "RULE-001",
-        "name": "Reverse Shell / Network Tool Execution",
+        "name": "Network Tool Execution",
         "pattern": r"\b(nc|netcat|ncat|socat)\b",
         "risk_level": "HIGH",
         "mitre_technique": "T1059.004 (Command and Scripting Interpreter: Unix Shell)"
@@ -12,7 +12,7 @@ DETECTION_RULES = [
     {
         "id": "RULE-002",
         "name": "Credential Access Attempt",
-        "pattern": r"(/etc/shadow|/etc/sudoers|unshadow)",
+        "pattern": r"(/etc/shadow|unshadow)",
         "risk_level": "CRITICAL",
         "mitre_technique": "T1003.008 (OS Credential Dumping: /etc/passwd and /etc/shadow)"
     },

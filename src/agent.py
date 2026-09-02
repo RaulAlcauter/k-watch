@@ -6,7 +6,11 @@ from rules import evaluate_event
 
 def main():
     parser = argparse.ArgumentParser(description="k-watch: eBPF Linux EDR Agent")
-    parser.add_argument("--alerts-only", action="store_true", help="Mostrar únicamente las alertas de riesgo ALTO")
+    parser.add_argument(
+        "--alerts-only",
+        action="store_true",
+        help="Mostrar únicamente alertas de riesgo MEDIUM, HIGH o CRITICAL"
+    )
     args = parser.parse_args()
 
     # Cargar y leer el archivo C del Kernel
